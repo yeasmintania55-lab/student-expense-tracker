@@ -1,3 +1,5 @@
+🌐 **Live Demo:** [Click here to view my project](https://yeasmintania55-lab.github.io/student-expense-tracker/)
+
 # Student Expense & Budget Tracker
 
 A simple and interactive web application that helps students manage their daily expenses and monthly budgets.
