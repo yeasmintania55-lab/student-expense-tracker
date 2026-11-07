@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <h2>Expense Tracker</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#add-expense">Add Expense</a>
+                <a href="#transactions">Transactions</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <h1>Dashboard</h1>
+                <p>Welcome! Manage your expenses smartly.</p>
+            </header>
+
+            <section class="cards">
+
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <h2 id="total-expenses">₹0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Monthly Budget</h3>
+                    <h2 id="monthly-budget">₹10000</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Remaining Balance</h3>
+                    <h2 id="remaining-balance">₹10000</h2>
+                </div>
+
+            </section>
+
+            <section class="expense-form" id="add-expense">
+
+                <h2>Add New Expense</h2>
+
+                <form id="expense-form">
+
+                    <input
+                        type="text"
+                        id="expense-name"
+                        placeholder="Expense name"
+                        required
+                    >
+
+                    <input
+                        type="number"
+                        id="expense-amount"
+                        placeholder="Amount"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="expense-date"
+                        required
+                    >
+
+                    <select id="expense-category" required>
+                        <option value="">Select Category</option>
+                        <option>Food</option>
+                        <option>Travel</option>
+                        <option>Education</option>
+                        <option>Shopping</option>
+                        <option>Personal</option>
+                    </select>
+
+                    <button type="submit">Add Expense</button>
+
+                </form>
+
+            </section>
+
+            <section class="transactions" id="transactions">
+
+                <h2>Recent Transactions</h2>
+                <button id="export-btn">Export Transactions</button>
+
+                <div class="filter-container">
+                    <label for="month-filter">Filter by month:</label>
+                    <input type="month" id="month-filter">
+                </div>
+
+                <input
+                    type="text"
+                    id="search-expense"
+                    placeholder="Search expenses..."
+                >
+
+                <div id="expense-list">
+                    <p>No expenses added yet.</p>
+                </div>
+
+            </section>
+
+            <section class="category-summary">
+
+                <h2>Spending by Category</h2>
+
+                <div id="category-summary">
+                    <p>No expenses added yet.</p>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Expense Distribution</h3>
+                    <canvas id="expenseChart"></canvas>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
